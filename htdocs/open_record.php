@@ -45,12 +45,12 @@
   <div id="center">
   <form method="post" action="edit_record.php"> 
     <label for="title">Title:</label><br />
-    <input type="text" id="title" name="title" value="<?php echo $title; ?>"><br />
-    <input type="hidden" name="showid" value="<?php echo $show_id; ?>"><br />
+    <input type="text" id="title" name="title" value="<?= htmlspecialchars($title); ?>"><br />
+    <input type="hidden" name="showid" value="<?= htmlspecialchars($show_id); ?>"><br />
     <label for="genre">Genre:</label><br />
-    <input type="text" id="genre" name="genre" value="<?php echo $genre; ?>"><br />
+    <input type="text" id="genre" name="genre" value="<?= htmlspecialchars($genre); ?>"><br />
     <label for="seasons">Seasons:</label><br />
-    <input type="number" id="seasons" name="seasons" value="<?php echo $seasons; ?>" min="1"><br />
+    <input type="number" id="seasons" name="seasons" value="<?= htmlspecialchars($seasons); ?>" min="1"><br />
     <label for"form">Actors:</label><br />
   <table id="actorform">
 <?php

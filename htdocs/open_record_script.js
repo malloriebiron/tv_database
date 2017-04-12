@@ -1,3 +1,12 @@
+
+function escapeHtml(unsafe) {
+  return unsafe.replace(/&/g, "&amp;")
+               .replace(/</g, "&lt;")
+               .replace(/>/g, "&gt;")
+               .replace(/"/g, "&quot;")
+               .replace(/'/g, "&#039;");
+}
+
 $(document).ready(function(){
   $("html").on('click', "#addactor", function(event){
     event.preventDefault();
@@ -7,15 +16,16 @@ $(document).ready(function(){
     last = label.substr(label.indexOf(" ")+1);
     id = $("#actors").val();
 
-  $("#actorform").append('<tr><td>' + first +'</td>'+
-     '<td>' + last + '</td>'+
-    '<td><input name="actor[]" class="delete"  type="hidden" value="'+ id +'">' +
-     '<button type="button" class="remove">Remove</button></td></tr>');
+    $("#actorform").append('<tr><td>' + escapeHtml(first) +'</td>'+
+       '<td>' + escapeHtml(last) + '</td>'+
+      '<td><input name="actor[]" class="delete"  type="hidden" value="'+ escapeHtml(id) +'">' +
+       '<button type="button" class="remove">Remove</button></td></tr>');
   });
-  $("#actorform").on("click", ".remove", function(){
 
+  $("#actorform").on("click", ".remove", function(){
     $(this).closest("tr").remove();
   });
+
   $("form").on("click", "#addnewact", function(){
     var full, id, first, last;
     full = prompt("Enter Actor's Name");
@@ -25,11 +35,18 @@ $(document).ready(function(){
       method: "POST",
       url: "add_new_actor.php",
       data: {first: first,
-        last: last},
-        success: function(response){
-        $("#actorform").append('<tr><td>' + first +'</td>'+
-          '<td>' + last + '</td>'+
-          '<td><input name="actor[]" class="delete"  type="hidden" value="'+ response +'">' +
+        last: last
+      },
+      success: function(response){
+        var new_id;
+        if (/(\d+)/.test(response)) {
+          new_id = RegExp.$1; 
+        } else {
+           // print error
+        }
+        $("#actorform").append('<tr><td>' + escapeHtml(first) +'</td>'+
+          '<td>' + escapeHtml(last) + '</td>'+
+          '<td><input name="actor[]" class="delete"  type="hidden" value="'+ escapeHtml(new_id)+'">' +
           '<button type="button" class="remove">Remove</button></td></tr>');
       }
     });
