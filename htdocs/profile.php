@@ -34,11 +34,11 @@ include 'header.php';
     foreach($stmt->fetchAll(PDO::FETCH_ASSOC) as $result )
     { ?>
       <tr>
-        <td><?php print($result['Title']); ?></td>
-        <td><?php print($result['Genre']); ?></td>
-        <td class="rightCol"><?php print($result['Seasons']); ?></td>
+        <td><?= htmlspecialchars($result['Title']); ?></td>
+        <td><?= htmlspecialchars($result['Genre']); ?></td>
+        <td class="rightCol"><?= htmlspecialchars($result['Seasons']); ?></td>
         <td><form action="open_record.php" method="post">
-            <input name="record" type="hidden" value=<?php echo $result['ShowID']; ?> >
+            <input name="record" type="hidden" value=<?= htmlspecialchars($result['ShowID']); ?> >
             <input type="submit" value="Open Record">
         </form></td>
       </tr>
@@ -69,9 +69,9 @@ include 'header.php';
    foreach($a_stmt->fetchAll(PDO::FETCH_ASSOC) as $a_result )
    { ?>
     <tr>
-      <td><?php print($a_result['Title']); ?></td>
-      <td><?php print($a_result['First']); ?></td>
-      <td><?php print($a_result['Last']); ?></td>
+      <td><?= htmlspecialchars($a_result['Title']); ?></td>
+      <td><?= htmlspecialchars($a_result['First']); ?></td>
+      <td><?= htmlspecialchars($a_result['Last']); ?></td>
     </tr>
   <?php } ?>
   </table>
