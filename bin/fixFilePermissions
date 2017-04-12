@@ -1,0 +1,15 @@
+cd /web/mdb1022
+chcon -R -t httpd_sys_content_t .
+find . -type l -exec chcon -h -t httpd_sys_content_t '{}' ';'
+find . -type d -name conf -exec chcon -R -t httpd_sys_content_t '{}' ';'
+find . -type d -name apache_conf -exec chcon -R -t httpd_config_t '{}' ';'
+find . -type d -name logs -exec chcon -R -t httpd_log_t '{}' ';'
+find . -type d -name bin -exec chcon -R -t httpd_sys_script_exec_t '{}' ';'
+find . -type d -name cgi-bin -exec chcon -R -t httpd_sys_script_exec_t '{}' ';'
+find . -type d -name htdocs -exec chcon -R -t httpd_sys_content_t '{}' ';'
+find . -type d -name tmp -exec chcon -R -t httpd_sys_content_rw_t '{}' ';'
+find . -type d -name static -exec chcon -R -t httpd_sys_content_t '{}' ';'
+find . -type d -name lib -exec chcon -R -t usr_t '{}' ';'
+find . -type d -name resources -exec chcon -R -t etc_t '{}' ';'
+find . -type d -name site_certificates -exec chcon -R -t cert_t '{}' ';'
+

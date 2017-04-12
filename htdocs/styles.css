@@ -1,0 +1,193 @@
+body{
+	background-color: #a7d4d6;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	
+}
+.main{
+  margin-left: 280px;
+}
+.box{
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  background-color: #677c7c;
+  color: #ffffff;
+  margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+.buttonCenter{
+	text-align: center;
+  padding-top: 20px;
+}
+.buttonRight{
+	float: right;
+	padding-bottom: 10px;
+	
+}
+.buttonLeft{
+	float: left;
+	padding-bottom: 10px;
+}
+#createaccount{
+  display: block;
+  margin: 20px;
+}
+#center{
+	display: block;
+  background-color: #677c7c;
+  color: #ffffff;
+	margin: auto;
+	width: 400px;
+	padding: 30px;
+	text-align: left;
+  border: solid;
+  border-width: 8px;
+}
+#actorform table{
+  margin: 0px;
+  padding: 0px;
+}
+#actorform th{
+  font-size: 20px;
+  text-align: left;
+  padding: 2px;
+}
+#actorform td{
+  background-color: #677c7c;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 4px;
+}
+#makeAccount{
+
+  display: block;
+  background-color: #677c7c;
+  color: #ffffff;
+  margin: auto;
+  width: 330px;
+  padding: 30px;
+  text-align: left;
+  border: solid;
+  border-width: 8px;
+}
+#makeAccount input[type=text]{
+  width: 300px;
+}
+#makeAccount input[type=email]{
+  width: 300px;
+}
+#makeAccount input[type=password]{
+  width: 300px;
+}
+input[type=text]{
+  width: 350px;
+}
+input[type=number]{
+  width: 350px;
+}
+select{
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+#loginbox{
+  display: block;
+  background-color: #677c7c;
+  color: #ffffff;
+  margin: auto;
+  width: 300px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border: solid;
+  border-width: 8px;
+  text-align: left;
+}
+#biggerFont{
+  font-size: 16px;
+}
+#loginbox input[type=text]{
+  width: 285px;
+}
+#loginbox input[type=password]{
+  width: 285px;
+}
+a:link{
+	color: #000000;
+}
+a:visited{
+	color: #001f51;
+}
+
+#profile{
+	text-align: left;
+}
+h1{
+	padding: 20px;
+}
+input{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+th {
+  background-color: #677c7c;
+  color: #ffffff;
+  padding: 8px;
+  font-size: 24px;
+}
+td{
+  background-color: #ffffff;
+  color: #232526;
+  padding: 8px;
+  font-size: 18px;
+}
+td.rightCol {
+  text-align: right;
+}
+#nav{
+  position: fixed;
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 40px;
+  top: 0;
+  left: 0;
+}
+#nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+#nav li a{
+  display: block;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;  
+  border: solid;
+  border-color: #677c7c;
+  border-left: none;
+  border-right: none;
+  text-decoration: none;
+  font-size: 20px;
+}
+#nav li a:hover{
+  background-color: #e5e5e5;
+}
+#nav li a:active{
+  background-color: #c5e8ea;
+}
+#logout{
+  background-color: #ffffff;
+  border: 4px solid #a7d4d6;
+  padding: 5px;
+  border-radius: 3px;
+  width: 70px; 
+}
+#logout:hover{
+  background-color: #a7d4d6;
+}

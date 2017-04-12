@@ -1,0 +1,12 @@
+#change
+<VirtualHost *:80>
+  ServerName mdb1022.sr.unh.edu
+  ServerAdmin mdb1022@wildcats.unh.edu
+  DocumentRoot /web/mdb1022/htdocs
+  ErrorLog /web/mdb1022/logs/error.log
+  CustomLog /web/mdb1022/logs/access.log combined
+
+  <Directory />
+    Require all granted
+  </Directory>
+</VirtualHost>
